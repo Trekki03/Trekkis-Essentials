@@ -1,0 +1,59 @@
+main: de.trekki03.trekkisessentials.Main
+
+name: TrekkisEssentials
+author: Trekki03
+description: The plugin contains (at the time) inventory management for administrators and backpacks / team backpacks for normal users.
+
+version: 0.0.0
+api-version: 1.18
+
+commands:
+  saveinv:
+    usage: /saveinv [Online Player]
+    description: Saves the players inventory content in a .yml file
+    permission: tim.save
+    permission-message: You need the permission tim.save
+
+  loadinv:
+    usage: /loadinv [Saved Player] [replace inventory (True/False)]
+    description: Loads the players inventory content from a file. You can choose if your inventory gets replaced or if the content gets shown in an interface
+    permission: tim.load
+    permission-message: You need the permission tim.load
+
+  seeinv:
+    usage: /seeinv <Online Player> [interact true/false]
+    description: Let you see and interact with the targets inventory.
+    permission: tim.see
+    permission-message: You need the permission tim.see
+
+  seeend:
+    usage: /<command> <Online Player> [interact true/false]
+    description: Let you see and interact with the targets enderchest.
+    permission: te.end
+    permission-message: You need the permission tim.end
+
+permissions:
+  te.save:
+    description: Allows usage of /saveinv command
+    default: op
+
+  te.load:
+    description: Allows usage of /loadinv command
+    default: op
+
+  te.see:
+    description: Allows usage of /seeinv command
+    default: op
+
+  te.end:
+    description: Allows usage of /seeend command
+    default: op
+
+  tim.*:
+    description: Allows access to all permissions
+    default: op
+    children:
+      te.load: true
+      te.save: true
+      te.see: true
+      te.end: true
