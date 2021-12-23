@@ -4,7 +4,7 @@ name: TrekkisEssentials
 author: Trekki03
 description: The plugin contains (at the time) inventory management for administrators and backpacks / team backpacks for normal users.
 
-version: 0.0.0
+version: 1.0.1
 api-version: 1.18
 
 commands:

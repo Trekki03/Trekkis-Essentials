@@ -62,20 +62,15 @@ class LoadInventoryCommand : CommandExecutor {
     // fetches uuid of player for argument
     private fun withArgument(sender: Player, arg: String, replace: Boolean) {
         val uuid = MojangApi.getUUID(arg)
-        Bukkit.broadcastMessage("UUID is: $uuid")
-        Bukkit.broadcastMessage("UUID is: $uuid")
         when (uuid) {
             "invalid name", "error" -> {
                 sender.sendMessage(Main.lang.getPlayerText("chatMessage.loadInventory.noPlayer", sender))
-                Bukkit.broadcastMessage("UUID invalid name")
             }
             else -> {
                 if(replace) {
-                    Bukkit.broadcastMessage("UUID valid, replace true")
                     loadInventory(sender,Bukkit.getOfflinePlayer(UUID.fromString(uuid)), true)
                 }
                 else {
-                    Bukkit.broadcastMessage("UUID valid, replace false")
                     loadInventory(sender,Bukkit.getOfflinePlayer(UUID.fromString(uuid)), false)
                 }
             }
@@ -85,7 +80,6 @@ class LoadInventoryCommand : CommandExecutor {
     // loads the inventory from file (if existing) and shows or replaces inventory of sender
     private fun loadInventory(sender: Player, target: OfflinePlayer, replaceInventory: Boolean) {
         val file = File(Main.plugin.dataFolder, String.format("inventories/%s.yml", target.uniqueId))
-        Bukkit.broadcastMessage(file.absolutePath)
         val config: FileConfiguration = YamlConfiguration.loadConfiguration(file)
 
         if(!file.exists())

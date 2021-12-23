@@ -42,6 +42,11 @@ class Language {
         langConfig.addDefault("en_en.consoleMessage.onlyPlayer", "This command can't be executed by a console")
         langConfig.addDefault("de_de.consoleMessage.onlyPlayer", "Dieser Befehl kann nicht von einer Konsole ausgeführt werden")
 
+        langConfig.addDefault("en_en.consoleMessage.noUpdate", "There is not a new update available.")
+        langConfig.addDefault("de_de.consoleMessage.noUpdate", "Dies ist die aktuellste Version des Plugins.")
+
+        langConfig.addDefault("en_en.consoleMessage.update", "There is a new update available.")
+        langConfig.addDefault("de_de.consoleMessage.update", "Es ist eine neue Version des Plugins verfügbar.")
 
 
         /* Chat Messages */
